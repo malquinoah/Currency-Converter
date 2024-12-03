@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+
+  <h1>Convert Any Currency</h1>
+
+<% if (locals.content) { %>
+  <h2><%= amount %> <%= from %> = <%= content %> <%= to %></h2>
+  <form action="/conversion" method="post">
+    <label for="fromCurrency">From:</label><br>
+    <input type="text" id="fromCurrency" name="fromCurrency" placeholder="Enter currency to convert from"><br>
+    <label for="toCurrency">To:</label><br>
+    <input type="text" id="toCurrency" name="toCurrency" placeholder="Enter currency to convert to"><br>
+    <label for="amount">Amount:</label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter amount of currency"><br>
+    <input type="submit" value="Convert" class="submitButton">
+  </form>
+  <% } else { %>
+  <form action="/conversion" method="post">
+    <label for="fromCurrency">From:</label><br>
+    <input type="text" id="fromCurrency" name="fromCurrency" placeholder="Enter currency to convert from"><br>
+    <label for="toCurrency">To:</label><br>
+    <input type="text" id="toCurrency" name="toCurrency" placeholder="Enter currency to convert to"><br>
+    <label for="amount">Amount:</label><br>
+    <input type="text" id="amount" name="amount" placeholder="Enter amount of currency"><br>
+    <input type="submit" value="Convert" class="submitButton">
+  </form>
+  <% } %>
+
+  <%- include("partials/footer.ejs") %>
